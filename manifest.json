@@ -1,0 +1,22 @@
+{
+  "name": "幼小衔接学习工作台",
+  "short_name": "学习工作台",
+  "description": "面向6岁幼小衔接儿童的趣味学习工作台，包含语文、数学、英语、运动打卡、游戏和积分体系",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#FFF8E7",
+  "theme_color": "#FF6B6B",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23FF6B6B'/><text x='50' y='65' font-size='50' text-anchor='middle' fill='white'>📚</text></svg>",
+      "sizes": "100x100",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' rx='100' fill='%23FF6B6B'/><text x='256' y='340' font-size='280' text-anchor='middle' fill='white'>📚</text></svg>",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
