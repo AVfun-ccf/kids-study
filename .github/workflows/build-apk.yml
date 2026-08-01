@@ -1,0 +1,43 @@
+name: Build Android APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'manifest.json'
+      - 'android/**'
+      - '.github/workflows/build-apk.yml'
+
+jobs:
+  build-apk:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+        with:
+          cmdline-tools-version: 11076708
+          packages: 'platforms;android-34 build-tools;34.0.0'
+
+      - name: Make build script executable
+        run: chmod +x android/build-apk.sh
+
+      - name: Build APK
+        run: bash android/build-apk.sh
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: kids-study-apk
+          path: android/build/kids-study.apk
+          if-no-files-found: error
